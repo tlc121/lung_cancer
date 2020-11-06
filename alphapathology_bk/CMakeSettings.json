@@ -1,0 +1,37 @@
+﻿{
+  "configurations": [
+    {
+      "name": "Linux-Release",
+      "generator": "Unix Makefiles",
+      "configurationType": "Release",
+      "cmakeExecutable": "/usr/local/bin/cmake",
+      "remoteCopySourcesExclusionList": [ ".vs", ".git", "out" ],
+      "cmakeCommandArgs": "",
+      "buildCommandArgs": "",
+      "ctestCommandArgs": "",
+      "inheritEnvironments": [ "linux_x64" ],
+      "remoteMachineName": "540267251;10.100.37.2 (username=root, port=30099, authentication=Password)",
+      "remoteCMakeListsRoot": "$HOME/.vs/${projectDirName}/${workspaceHash}/src",
+      "remoteBuildRoot": "$HOME/.vs/${projectDirName}/${workspaceHash}/out/build/${name}",
+      "remoteInstallRoot": "$HOME/.vs/${projectDirName}/${workspaceHash}/out/install/${name}",
+      "remotePreGenerateCommand": "cd $HOME/.vs/${projectDirName}/${workspaceHash}/src; conan install . -s arch=x86_64 -s os=Linux -r cloud; rm -rf /opt/alpha/config /opt/alpha/model; mkdir /opt/alpha/config; cp -r configuration/* /opt/alpha/config; mkdir /opt/alpha/model; cp -r ctLung/model_cv/* /opt/alpha/model",
+      "remoteCopySources": true,
+      "rsyncCommandArgs": "-t",
+      "remoteCopyBuildOutput": false,
+      "remoteCopySourcesMethod": "rsync",
+      "addressSanitizerRuntimeFlags": "detect_leaks=0",
+      "variables": [
+        {
+          "name": "ENABLE_ULTRASOUND_BUILD",
+          "value": "True",
+          "type": "BOOL"
+        },
+        {
+          "name": "ENABLE_CTLUNG_BUILD",
+          "value": "True",
+          "type": "BOOL"
+        }
+      ]
+    }
+  ]
+}

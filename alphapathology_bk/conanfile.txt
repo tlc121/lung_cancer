@@ -1,0 +1,8 @@
+[requires]
+TensorFlow/1.13@Algorithm/stable
+OpenCV/4.1.0@Algorithm/dev
+OpenSlide/3.4.1@Algorithm/stable
+ThirdParty/1.0.0@Algorithm/stable
+
+[generators]
+cmake
